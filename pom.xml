@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                org.hcl.chatbot.oop_chatbot_sem5/org.hcl.chatbot.oop_chatbot_sem5.HelloApplication
+                                org.hcl.chatbot.oop_chatbot_sem5/org.hcl.chatbot.oop_chatbot_sem5.ChatApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
