@@ -15,6 +15,7 @@ public class ChatApplication extends Application {
         stage.setTitle("Простой ЧатБот");
         stage.setScene(scene);
         stage.show();
+        // TODO: иконка, желательно svg
     }
 
     public static void main(String[] args) {
