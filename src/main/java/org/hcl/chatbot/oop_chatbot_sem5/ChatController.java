@@ -6,14 +6,17 @@ import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
 
+/** Класс контроллера приложения*/
 public class ChatController {
 
-    BotModel currBot = new BotModel();
+    BotModel currBot = new BotModel(); // Инициализировать экземпляр бота
 
+    /** Инициализация FXML, вызывается при загрузке контроллера. Загружает данные бота при открытии приложения*/
     public void initialize() {
         this.Load();
     }
 
+    /** Заполняет поле вывода текста сообщениями из {@link BotModel#getChatHistory()} */
     private void populateTextArea() {
         ArrayList<Message> chatHistory= currBot.getChatHistory();
         for (Message message : chatHistory) {
@@ -21,18 +24,22 @@ public class ChatController {
         }
     }
 
+    /** Поле вывода сообщений*/
     @FXML
     private TextArea messageTextArea;
 
+    /** Поле ввода сообщения*/
     @FXML
     private TextField textInputField;
 
+    /** Вызов {@link BotModel#newBotData()} и очистка поля вывода сообщений*/
     @FXML
     protected void New() {
         currBot.newBotData();
         messageTextArea.clear();
     }
 
+    /** Загружает данные из бота и отрисовывает их методом {@link ChatController#populateTextArea()}*/
     @FXML
     protected void Load() {
         try {
@@ -43,6 +50,7 @@ public class ChatController {
         catch (Exception e) { e.printStackTrace(); }
     }
 
+    /** Сохранение данных бота*/
     @FXML
     protected void Save() {
         try {
@@ -51,6 +59,8 @@ public class ChatController {
         catch (Exception e) { e.printStackTrace(); }
     }
 
+    /** Отправка сообщения боту. Получает строку типа {@link String} из поля ввода {@link ChatController#textInputField}
+     * и отправляет ее боту для получения ответа. Сообщение пользователя и ответ бота добавляются к полю вывода текста*/
     @FXML
     protected void onSendButtonClick() {
         String userInput = textInputField.getText();
