@@ -19,4 +19,3 @@ public class BotSerialization {
         return new dataObj(names, dataIn);
     }
 }
-

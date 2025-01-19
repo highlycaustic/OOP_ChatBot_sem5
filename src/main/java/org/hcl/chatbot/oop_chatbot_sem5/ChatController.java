@@ -11,6 +11,14 @@ public class ChatController {
 
     BotModel currBot = new BotModel(); // Инициализировать экземпляр бота
 
+    /** Поле вывода сообщений*/
+    @FXML
+    private TextArea messageTextArea;
+
+    /** Поле ввода сообщения*/
+    @FXML
+    private TextField textInputField;
+
     /** Инициализация FXML, вызывается при загрузке контроллера. Загружает данные бота при открытии приложения*/
     public void initialize() {
         this.Load();
@@ -23,14 +31,6 @@ public class ChatController {
             messageTextArea.appendText(message.Display() + "\r\n");
         }
     }
-
-    /** Поле вывода сообщений*/
-    @FXML
-    private TextArea messageTextArea;
-
-    /** Поле ввода сообщения*/
-    @FXML
-    private TextField textInputField;
 
     /** Вызов {@link BotModel#newBotData()} и очистка поля вывода сообщений*/
     @FXML
